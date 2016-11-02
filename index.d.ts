@@ -41,14 +41,16 @@ declare namespace commandLineArgs {
 
     /**
      * A form to organize options.
+     *
+     * @see https://github.com/j-oliveras/typed-command-line-args#using-groups
      */
     group?: string | Array<string>;
   }
 
   /**
-   * Base declaration if uses grouped options.
+   * Base declaration if uses grouped options. Is not needed use it.
    *
-   * @see https://github.com/j-oliveras/typed-command-line-args#readme
+   * @see https://github.com/j-oliveras/typed-command-line-args#using-groups
    */
   export interface GroupedArgsResult {
     _all: any;
@@ -65,7 +67,7 @@ declare namespace commandLineArgs {
  * @param argv Arguments to parse. By default it parses the global process.argv array.
  * @return an object with the parsed options. Its type depends on definitions.
  *
- * @see https://github.com/j-oliveras/typed-command-line-args#readme
+ * @see https://github.com/j-oliveras/typed-command-line-args#write-a-type-for-the-returned-object
  * for a sample to write a type for the returned object.
  *
  * @throws UNKNOWN_OPTION if the user sets an option without a definition.
@@ -83,6 +85,11 @@ declare namespace commandLineArgs {
  * @throws DUPLICATE_DEFAULT_OPTION if more than one option definition has defaultOption: true.
  */
 declare function commandLineArgs(definitions: Array<commandLineArgs.ArgsOptions>, argv?: Array<string>): any;
+/**
+ * Use it to avoid returned value casting. Is your responsibility to write a valid type.
+ *
+ * @see https://github.com/j-oliveras/typed-command-line-args#write-a-type-for-the-returned-object
+ */
 declare function commandLineArgs<T>(definitions: Array<commandLineArgs.ArgsOptions>, argv?: Array<string>): T;
 
 export = commandLineArgs;

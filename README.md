@@ -4,6 +4,8 @@
 
 The type definition for [`command-line-args`](https://github.com/75lb/command-line-args.git) version 3.x.x (currently 3.0.2)
 
+Tests based on [official tests](https://github.com/75lb/command-line-args/tree/master/test).
+
 ## LICENSE
 
 MIT
